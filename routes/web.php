@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::resource('empleados','controlador_para_empleados');
+
+Route::get('nav',function(){
+	return view('layouts.app');
 });

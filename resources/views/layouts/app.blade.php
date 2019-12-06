@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <nav class="navbar navbar-default">
+	@include('layouts.head')
+	<title>@yield('title')</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Logo</a>
@@ -18,5 +20,15 @@
             </ul>
             </div>
         </nav>
-    </body>
+        <section>
+            @yield('content')
+        </section>
+
+    
+
+	<footer class="footer">
+		@include('layouts.footer')
+	</footer>
+
+</body>
 </html>
