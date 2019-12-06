@@ -18,6 +18,7 @@
               <li><a href="#">Inicio</a></li>
               <li><a href="#">Empleados</a></li>
               <li><a href="#">Departamentos</a></li>
+              <li><a href="#">Proyectos</a></li>
             </ul>
             </div>
         </nav>

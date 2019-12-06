@@ -29,7 +29,7 @@ class controlador_para_proyectos extends Controller
      */
     public function create()
     {
-        //
+        return view('proyectos.create');
     }
 
     /**
@@ -38,9 +38,18 @@ class controlador_para_proyectos extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validaciondelosformulariosdeproyectos $request)
     {
-        //
+        $insertar=new Proyecto;
+        $insertar->nombre=$request->nombre;
+        $insertar->titulo=$request->titulo;
+        $insertar->fechainicio=$request->fechainicio;
+        $insertar->fechafin=$request->fechafin;
+        $insertar->horasestimadas=$request->horasestimadas;
+        $insertar->empleados_id=$request->empleados_id;
+        $insertar->save();
+
+        return redirect('proyectos');
     }
 
     /**
@@ -63,7 +72,8 @@ class controlador_para_proyectos extends Controller
      */
     public function edit($id)
     {
-        //
+        $proyecto=Proyecto::find($id);
+        return view('proyectos.edit',compact('proyecto'));
     }
 
     /**
@@ -73,9 +83,11 @@ class controlador_para_proyectos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(validaciondelosformulariosdeproyectos $request, $id)
     {
-        //
+        $proyecto=Proyecto::find($id);
+        $proyecto->update($request->all());
+        return redirect('proyectos');
     }
 
     /**
@@ -86,6 +98,10 @@ class controlador_para_proyectos extends Controller
      */
     public function destroy($id)
     {
-        //
+        $proyecto=Proyecto::find($id);
+
+        $proyecto->delete();
+
+        return redirect('proyectos');
     }
 }
