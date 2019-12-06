@@ -17,6 +17,7 @@
              <!-- <li class="active"><a href="#">Home</a></li>-->
               <li><a href="#">Inicio</a></li>
               <li><a href="#">Empleados</a></li>
+              <li><a href="#">Departamentos</a></li>
             </ul>
             </div>
         </nav>

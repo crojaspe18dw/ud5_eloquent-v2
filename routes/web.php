@@ -14,6 +14,6 @@
 
 Route::resource('empleados','controlador_para_empleados');
 
-Route::get('nav',function(){
-	return view('layouts.app');
-});
+Route::resource('departamentos','controlador_para_departamentos');
+
+
