@@ -16,4 +16,7 @@ Route::resource('empleados','controlador_para_empleados');
 
 Route::resource('departamentos','controlador_para_departamentos');
 
+Route::resource('proyectos','controlador_para_proyectos');
+
+
 

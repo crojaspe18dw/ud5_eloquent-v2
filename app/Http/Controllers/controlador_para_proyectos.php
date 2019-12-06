@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Proyecto;
 use App\Empleado;
 
-use App\Proyecto;
-
-class controlador_para_empleados extends Controller
+class controlador_para_proyectos extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +16,10 @@ class controlador_para_empleados extends Controller
      */
     public function index()
     {
-        $empl=Empleado::all();
-        
+        $proyect=Proyecto::all();
+        $empleado=Empleado::all();
 
-        return view('empleados.index',compact('empl'));
-        
-        
+        return view('proyectos.index',compact('proyect','empleado'));
     }
 
     /**
@@ -54,8 +51,8 @@ class controlador_para_empleados extends Controller
      */
     public function show($id)
     {
-        $empleado=Empleado::find($id);
-        return view('empleados.show',compact('empleado'));
+        $proyect=Proyecto::find($id);
+        return view('proyectos.show',compact('proyect')); 
     }
 
     /**

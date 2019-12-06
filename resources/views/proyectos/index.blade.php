@@ -14,16 +14,19 @@
         <th>Fecha Inicio</th>
         <th>Fecha fin</th>
         <th>Horas estimadas</th>
+        <th>empleado responsable</th>
       </tr>
-
+      @foreach($proyect as $i)
       <tr>
-        <td>Aqui el id</td>
-        <td>Aqui el nombre</td>
-        <td>Aqui el titulo</td>
-        <td>Aqui la fecha de inicio</td>
-        <td>Aqui la fecha de fin</td>
-        <td>Aqui las horas estimadas</td>
+        <td>{{$i->id}}</td>
+        <td>{{$i->nombre}}</td>
+        <td>{{$i->titulo}}</td>
+        <td>{{$i->fechainicio}}</td>
+        <td>{{$i->fechafin}}</td>
+        <td>{{$i->horasestimadas}}</td>
+        <td><a href="empleados/{{$i->empleados_id}}">{{$i->id}}</a></td>
       </tr>
+      @endforeach
     </table>
 
 @endsection
